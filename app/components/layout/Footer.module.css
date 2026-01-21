@@ -1,0 +1,99 @@
+.footer{
+    background: #222222;
+    
+}
+
+.footerLinksContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 70px 70px 30px;
+    width: 100%;
+    
+}
+
+.footerLinksCol{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 184.3px;
+    gap: 8px;
+}
+
+
+.footerLink{
+    
+    font-size: 12px;
+    color: #fdfdfd;
+    cursor: pointer;
+}
+
+.footerLinkTitle{
+    font-size: 14px;
+    color: #fdfdfd;
+    margin:  0px 0px 8px;
+}
+
+.footerDivider{
+    border-bottom: 1px solid #333;
+    width: 100%; 
+}
+
+.footerLowerSection{
+    margin: 30px 70px 0px;
+}
+
+.footerLowerMenuRow{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerLogosContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.footerLogosRow{
+    display: flex;
+    gap: 8px;
+}
+
+.footerNavContainer{
+    display: flex;
+    justify-content: space-between;
+    max-width: 287.7px;
+    width: 100%;
+}
+
+.footerNavContainer a{
+    font-size: 14px;
+    color: #fdfdfd;
+}
+
+.footerCopyrightSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0px 0px;
+}
+
+.footerCenteredRow{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    color: #AAAAAA;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.footerCenteredRow a{
+    cursor: pointer;
+
+}
+
+.footerCenteredRow a:after{
+    content: "|";
+    margin: 0px 8px;
+}
