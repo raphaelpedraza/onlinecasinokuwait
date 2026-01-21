@@ -1,0 +1,239 @@
+.footer {
+  background-color: #222222;
+  color: #fdfdfd;
+  font-family: Inter, sans-serif; /* Or your preferred sans-serif */
+}
+
+
+
+/* Top Menu Grid */
+.footer_menu {
+    display: grid;
+    grid-gap: 20px 55px;
+    gap: 20px 55px;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    padding: 70px 70px 0;
+}
+
+.menu_title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.menu_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu_list li {
+  margin-bottom: 8px;
+}
+
+.menu_list a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+  transition: color 0.2s;
+}
+
+.menu_list a:hover {
+  color: #ffffff;
+}
+
+/* Divider Line */
+.footer_divider {
+  border-top: 1px solid #333333;
+  margin: 20px 0;
+  width: 100%;
+}
+
+
+@media (min-width: 1024px) {
+    .footer_bottom {
+        padding-top: 30px !important;
+    }
+}
+
+
+.footer_bottom {
+    padding: 70px;
+}
+
+
+/* Middle Section: Logo, Apps, and Legal */
+.footer_bottom_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.footer_logoandapps {
+  align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    justify-content: center;
+}
+
+.footer_apps {
+  display: flex;
+  gap: 10px;
+}
+
+.footer_apps img {
+  height: 35px; /* Adjust based on your image aspect ratio */
+  width: auto;
+}
+
+.footer_legalLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.footer_legalLinks a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Bottom Centered Sections */
+.footer_copyright, 
+.footer_corporate, 
+.footer_partnerships {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer_copyright span {
+  font-size: 11px;
+  color: #888888;
+}
+
+.footer_corporate {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer_corporate a {
+  color: #aaaaaa;
+  text-decoration: none;
+  font-size: 11px;
+}
+
+.footer_corporate a:not(:last-child)::after {
+  content: "|";
+  margin-left: 10px;
+
+}
+
+/* Language Selector */
+.LanguagesWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.languageSelector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dropdown-icon {
+  transform: rotate(90deg); /* Makes chevron point down */
+  width: 10px;
+}
+
+/* Partnership Logos */
+.logoblock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  opacity: 0.8;
+}
+
+.logoblock img {
+  max-height: 25px;
+  width: auto;
+  filter: grayscale(100%) brightness(1.5); /* Matches the dimmed look */
+}
+
+
+
+/* --- Keep your existing desktop CSS above this --- */
+
+@media (max-width: 768px) {
+    /* 1. Reduce excessive padding */
+    .footer_menu {
+        padding: 40px 20px 0;
+        grid-template-columns: repeat(2, 1fr); /* Two columns on mobile */
+        grid-gap: 30px 20px;
+    }
+
+    .footer_bottom {
+        padding: 30px 20px;
+    }
+
+    /* 2. Stack Logo and App buttons vertically */
+    .footer_bottom_content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer_logoandapps {
+        align-items: center; /* Center the logo and app store buttons */
+    }
+
+    /* 3. Wrap legal links or stack them */
+    .footer_legalLinks {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    /* 4. Improve the Corporate links (Terms/Privacy/Cookies) */
+    .footer_corporate {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .footer_corporate a:not(:last-child)::after {
+        content: ""; /* Remove the "|" pipe divider on mobile stacks */
+        margin: 0;
+    }
+
+    /* 5. Make App Store buttons larger for "thumb" tapping */
+    .footer_apps img {
+        height: 40px;
+    }
+
+    /* 6. Ensure partnership logos don't overflow */
+    .logoblock {
+        gap: 15px;
+        justify-content: center;
+    }
+}
+
+/* Small phone adjustment */
+@media (max-width: 480px) {
+    .footer_menu {
+        grid-template-columns: 1fr; /* Single column for very small phones */
+        text-align: center;
+    }
+}

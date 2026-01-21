@@ -1,0 +1,285 @@
+/* ===============================
+   header Top Menu Wrapper
+================================ */
+.topMenuWrapper {
+  background: #111;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 1024px) {
+  .topMenuWrapper {
+    width: 100vw;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1023px) {
+  .topMenuWrapper {
+    position: sticky;
+    top: 0;
+    z-index: 899;
+  }
+}
+
+/* ===============================
+   Desktop Menu
+================================ */
+.desktopMainWrapper {
+  background: #181818;
+  border-bottom: 1px solid #333;
+  height: 72px;
+}
+
+@media (max-width: 1023px) {
+  .desktopMainWrapper {
+    display: none;
+  }
+}
+
+.desktopWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 16px 30px;
+}
+
+/* Left (Logo) */
+.desktopLeft {
+  display: flex;
+  align-items: center;
+  gap: 96px; /* space between logo and links */
+  flex-shrink: 0;
+}
+
+/* Center (Links) */
+.desktopLinksWrapper {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.desktopLinksWrapper {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+/* Right (Icons) */
+.desktopRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.desktopIconItem {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: initial;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  background-color: #222;
+  }
+
+/* ===============================
+   Mobile Menu
+================================ */
+.mobileWrapper {
+  background-color: #181818;
+  padding: 0 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .mobileWrapper {
+    display: none;
+  }
+}
+
+.mobileLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===============================
+   Mobile Burger Icon
+================================ */
+.mobileIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #222;
+  cursor: pointer;
+}
+
+.mobileBurger {
+  position: relative;
+  width: 14px;
+  height: 14px;
+}
+
+.mobileBurger span {
+  position: absolute;
+  width: 14px;
+  height: 1px;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.mobileBurger span:nth-child(1) { top: 2px; }
+.mobileBurger span:nth-child(2) { top: 6px; }
+.mobileBurger span:nth-child(3) { top: 10px; }
+
+/* ===============================
+   Logo
+================================ */
+.logo {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* ===============================
+   Menu Links
+================================ */
+.menuLink {
+  color: #aaa;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.15s ease, font-weight 0.15s ease;
+}
+
+.menuLink:hover {
+  color: #fff;
+  font-weight: 700;
+}
+
+.menuLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0;
+  background-color: #ff6b00;
+  transition: width 0.15s ease;
+}
+
+.menuLink:hover::after {
+  width: 100%;
+}
+
+
+
+/* ===============================
+   Mobile Header Base
+================================ */
+.mobileWrapper {
+  background-color: #181818;
+  height: 60px; /* Standard mobile header height */
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+@media (min-width: 1024px) {
+  .mobileWrapper {
+    display: none;
+  }
+}
+
+/* ===============================
+   Burger Icon & Animation
+================================ */
+.mobileIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background-color: #222;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.mobileBurger {
+  position: relative;
+  width: 16px;
+  height: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mobileBurger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fdfdfd;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animated State when Menu is Open */
+.active .mobileBurger span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+.active .mobileBurger span:nth-child(2) {
+  opacity: 0;
+}
+.active .mobileBurger span:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+/* ===============================
+   Mobile Sidebar / Overlay
+================================ */
+.mobileNavOverlay {
+  position: fixed;
+  top: 60px; /* Starts right below the header */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-color: #111;
+  z-index: 1000;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transform: translateX(-100%); /* Hidden by default */
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navOpen {
+  transform: translateX(0); /* Slides in */
+}
+
+.mobileNavLink {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 0;
+  border-bottom: 1px solid #222;
+}

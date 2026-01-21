@@ -1,0 +1,324 @@
+.section3 {
+  margin-top: 40px;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.box {
+  background: #181818;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 25px;
+  padding: 35px 0;
+  z-index: 1;
+  margin-bottom: 30px;
+  padding: 30px;
+}
+
+.box h2 {
+  font-size: 18px;
+  margin: 0;
+  padding: 0 0 30px 0;
+}
+
+.box h3 {
+  font-size: 18px;
+  margin: 0;
+  padding: 0 0 15px 0;
+}
+
+
+
+
+
+.proconwrapper {
+  align-items: unset;
+  display: flex;
+  flex-direction: row;
+  gap: 76px;
+  justify-content: space-between;
+  padding: 20px 24px;
+} 
+
+
+.proconlist{
+  
+  background-color: #222;
+  border-radius: 10px;
+  flex: 1 1;
+  padding: 20px;
+  width: 100%;
+}
+
+
+.pros .cons {
+  align-items: unset;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: unset;
+  flex: 1 1;
+  list-style-type: none;
+  margin: 0;
+  padding: 0 0 5px;
+}
+
+
+.pros li,
+.cons li {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+}
+
+
+
+.tableWrapper {
+
+  color: #ffffff;
+  padding: 20px;
+  font-family: sans-serif;
+  border-radius: 8px;
+}
+
+.tableTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #e0e0e0;
+}
+
+.tablerow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  margin-bottom: 4px;
+}
+
+/* This creates the highlighted bars for every 1st, 3rd, 5th row */
+.tablerow:nth-child(odd) {
+  background-color: #222222;
+  border-radius: 12px;
+}
+
+.tablerowlabel {
+  font-weight: 600;
+  color: #ffffff;
+  flex: 1;
+}
+
+.tablerowtext {
+  color: #cccccc;
+  flex: 2;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .tablerow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
+
+ul.numericalList {
+  list-style-type: decimal; /* Changes bullets to 1, 2, 3... */
+  padding-left: 20px;       /* Ensures numbers have room on the left */
+}
+
+ul.numericalList li {
+  margin-bottom: 8px;       /* Adds spacing between steps */
+  margin-left: 20px;
+}
+
+
+
+ul.bulletList {
+  list-style-type: disc; /* The standard bullet */
+  padding-left: 20px;
+         /* Light grey text for readability */
+}
+
+ul.bulletList li {
+  margin-bottom: 10px;   /* Spacing between bullets */
+  line-height: 1.6;     /* Better text breathing room */
+  margin-left: 20px;     
+}
+
+
+ul.bulletList a {
+  color: #ffffff;            /* Sets text color to white */
+  text-decoration: underline; /* Ensures the underline is visible */
+  font-weight: bold;        /* Makes the link text stand out */
+}
+
+
+
+.boxcontent a {
+  color: #ffffff;            /* Sets text color to white */
+  text-decoration: underline; /* Ensures the underline is visible */
+  font-weight: bold;   
+}
+
+
+
+.faqContainer {
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.faqItem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.questionButton {
+  width: 95%;
+  margin: 0 auto; /* Centers the button horizontally */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #2a2a2a;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: left;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.answerWrapper {
+  display: grid;
+  grid-template-rows: 0fr; /* Start at 0 fraction of the height */
+  transition: grid-template-rows 0.4s ease-in-out;
+  overflow: hidden;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.show {
+  grid-template-rows: 1fr; /* Expand to 1 full fraction of the content */
+}
+
+/* You must wrap your content in a div inside the wrapper */
+.answerContent {
+  min-height: 0;
+}
+
+.answerText {
+  padding: 15px 20px;
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+
+@media (max-width: 1023px) {
+  /* 1. Reduce outer section and box padding */
+  .section3 {
+    margin-top: 30px;
+    padding: 0 12px;
+  }
+
+  .box {
+    padding: 24px 16px; /* Narrower padding for small screens */
+    margin-bottom: 20px;
+  }
+
+  .box h2, .box h3 {
+    font-size: 17px;
+    padding-bottom: 15px;
+  }
+
+  /* 2. Pros and Cons: Change from Row to Column */
+  .proconwrapper {
+    flex-direction: column; /* Stacks Pros on top of Cons */
+    gap: 16px;
+    padding: 10px 0;
+  }
+
+  .proconlist {
+    width: auto; /* Allow padding to define width */
+  }
+
+  /* 3. Table Adjustments */
+  .tableWrapper {
+    padding: 10px 5px;
+  }
+
+  .tablerow {
+    flex-direction: column; /* Label on top, text below */
+    align-items: flex-start;
+    padding: 12px 15px;
+  }
+
+  .tablerowlabel {
+    font-size: 13px;
+    color: #ffffff; /* Optional: brand color to distinguish the label */
+    margin-bottom: 4px;
+  }
+
+  .tablerowtext {
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+  }
+
+  /* 4. Lists and Links */
+  ul.bulletList, ul.numericalList {
+    padding-left: 15px;
+  }
+
+  ul.bulletList li, ul.numericalList li {
+    margin-left: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* 5. FAQ Adjustments */
+  .questionButton {
+    width: 100%; /* Full width is better for thumbs */
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .answerWrapper {
+    width: 100%;
+  }
+
+  .answerText {
+    font-size: 13px;
+    padding: 12px 15px;
+  }
+}
+
+/* Specific fix for small phones */
+@media (max-width: 480px) {
+  .box {
+    border-radius: 0; /* Optional: flat edges look cleaner on tiny screens */
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+}

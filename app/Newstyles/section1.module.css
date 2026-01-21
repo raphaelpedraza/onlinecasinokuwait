@@ -1,0 +1,210 @@
+.section1 {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: #fdfdfd;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  position: relative;
+}
+
+
+
+.PageContent_wrapper__hnu2V {
+    align-items: center;
+    color: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    position: relative;
+}
+
+.pageIntro {
+  line-height: 20px;
+  text-transform: capitalize;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 90%;
+  text-align: center;
+}
+
+.pageIntro h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 19px;
+  margin-bottom: 19px;
+}
+
+.pageIntro p {
+  font-size: 14px;
+
+}
+
+.trustedNotes {
+  display: flex;
+  font-size: 12px;
+  justify-content: space-around;
+  margin: 35px 0;
+}
+
+.trustedBadge {
+  display: flex;
+  justify-content: space-around;
+  line-height: 14px;
+}
+
+.trustedBadge > div {
+  display: flex;
+  align-items: center; /* This is the "magic" for vertical centering */
+  gap: 8px;           /* Perfect spacing between flag and text */
+  margin: 17px;
+}
+
+.trustedBadge span {
+  font-size: 12px;
+  line-height: 1;    /* Prevents extra height from line spacing */
+  color: white;
+  white-space: nowrap; /* Keeps text on one line */
+}
+
+
+
+
+/* ===============================
+   Author block
+================================ */
+.pageAuthor {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pageAuthorInfo {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.pageAuthorInfo span {
+  line-height: 1.4;
+}
+
+.pageAuthorDate {
+  font-size: 13px;
+  color: #fdfdfd;
+}
+
+/* Optional */
+.notes {
+  margin-top: 24px;
+}
+
+
+
+
+@media (max-width: 1023px) {
+  /* 1. Adjust Heading size for smaller screens */
+  .pageIntro h1 {
+    font-size: 22px; /* Slightly smaller for mobile readability */
+    line-height: 1.2;
+    padding: 0 10px;
+    margin-top: 15px;
+  }
+
+  .pageIntro p {
+    font-size: 13px; /* Slightly smaller text for mobile */
+    line-height: 1.5;
+    color: #ccc; /* Softer white for easier reading on dark backgrounds */
+  }
+
+  /* 2. Stack Trusted Badges */
+  /* On mobile, we switch from a wide row to a wrapped flex or vertical list */
+.trustedBadge {
+    display: flex;
+    flex-direction: row;      /* Keep them side-by-side */
+    justify-content: center;  /* Center the group */
+    align-items: flex-start;  /* Align the tops of the badges */
+    gap: 15px;                /* Space between each badge */
+    margin: 25px 0;
+    width: 100%;
+  }
+
+  .trustedBadge > div {
+    display: flex;
+    flex-direction: column;   /* Stack: Logo on top, Text on bottom */
+    align-items: center;      /* Center the icon and text relative to each other */
+    text-align: center;
+    flex: 1;                  /* Give each badge equal space */
+    max-width: 100px;         /* Prevents them from spreading too far */
+    gap: 6px;                 /* Space between icon and text */
+    margin: 0;                /* Reset desktop margins */
+  }
+
+  .trustedBadge span {
+    font-size: 11px;
+    line-height: 1.2;
+    white-space: normal;      /* Allow wrapping to fit within the column */
+    color: white;
+    display: block;
+    width: 100%;              /* Ensures text respects the center alignment */
+  }
+
+  /* 3. Author Block Adjustments */
+.pageAuthor {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers everything for mobile */
+  margin-top: 12px;
+}
+
+.pageAuthorInfo {
+  display: flex;
+  flex-direction: row;      /* Logo beside the name */
+  align-items: center;      /* Vertically aligns logo with text */
+  justify-content: center;  /* Centers the text block on mobile */
+  gap: 8px;                 /* Space between logo and text */
+  margin: 0;                /* Resets default <p> margins */
+}
+
+.pageAuthorInfo span {
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left;         /* Keeps the lines of text aligned with the logo */
+}
+
+.pageAuthorDate {
+  font-size: 13px;
+  color: #888;              /* Dimmed color for secondary info */
+  margin: 4px 0 0 0;        /* Space above the date */
+  text-align: center;
+}
+
+/* Ensure the image doesn't shrink */
+.pageAuthorInfo img {
+  flex-shrink: 0;
+  border-radius: 4px;       /* Optional: small rounding for the logo */
+}
+
+@media (max-width: 480px) {
+  .pageAuthorInfo {
+    width: 90%;             /* Prevents text from hitting screen edges */
+  }
+}
+
+  /* 4. Section Container Padding */
+  .section1 {
+    padding: 0 16px; /* Ensure content doesn't touch the screen edges */
+  }
+}
+
+/* Extra small screens (Phones in portrait) */
+@media (max-width: 480px) {
+  .trustedBadge span {
+    font-size: 11px; /* Even smaller for very narrow screens */
+    white-space: normal; /* Allow text to wrap if the badge is long */
+    text-align: left;
+  }
+}

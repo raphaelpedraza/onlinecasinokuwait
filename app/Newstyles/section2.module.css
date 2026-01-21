@@ -1,0 +1,474 @@
+
+.section2 {
+  margin-top: 40px;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+.BrandsTable {
+  padding-top: 16px;
+  max-width: 1100px;
+  margin-inline: auto;
+  font-family: Arial, sans-serif;
+}
+
+
+
+
+.tableHeader {
+  display: grid;
+  background: rgba(255, 255, 255, .05);
+  border-radius: 10px 10px 0 0;
+  display: grid;
+  grid-gap: 35px;
+  gap: 35px;
+  grid-template-columns: 30px 123px 188px 151px 156px 145px;
+  padding: 15px 25px;
+  text-align: center;
+}
+
+.tableHeader span {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* 1. Register the custom property for the rotation angle */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.items {
+  background: #181818;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 17px;
+  padding: 16px 25px;
+  position: relative;
+  transition: .3s;
+  z-index: 1;
+}
+
+/* TARGET ONLY ITEM 1 */
+.items[data-id="item-1"] {
+  box-shadow: 0 0 25px 0 rgba(15, 228, 43, 0.3);
+  transform: scale(1.01);
+  /* We set background to transparent so the ::after background shows through */
+  background: transparent; 
+}
+
+/* The Shimmer Background (Middle Layer) */
+.items[data-id="item-1"]::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: linear-gradient(
+    270deg, 
+    rgba(255, 85, 0, 0) 0%, 
+    rgba(0, 255, 0, 0.25) 50%, 
+    rgba(255, 85, 0, 0) 100%
+  ), #111;
+  background-size: 200% 200%;
+  border-radius: 8px;
+  animation: backgroundColorChange 5s ease infinite;
+  z-index: -1; 
+}
+
+/* The Rotating Gradient Border (Bottom Layer) */
+.items[data-id="item-1"]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  
+  /* background: [Solid Center] padding-box, [Gradient Border] border-box */
+  background: 
+    linear-gradient(#111, #111) padding-box, 
+    linear-gradient(var(--angle), #05701c, #fbff1f) border-box;
+    
+  animation: rotateBorder 5s linear infinite;
+  transition: all .5s;
+  z-index: -2; 
+}
+
+/* --- ANIMATIONS --- */
+
+/* Moves the colorful border in a circle */
+@keyframes rotateBorder {
+  to {
+    --angle: 360deg;
+  }
+}
+
+/* Moves the horizontal shimmer effect */
+@keyframes backgroundColorChange {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.itemInfo {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.number {
+      background: #ff6b00;
+    font-weight: 700;
+    margin-bottom: auto;
+    margin-top: auto;
+    align-items: center;
+    background: #333;
+    border-radius: 5px;
+    color: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 30px;
+    justify-content: center;
+    padding: 10px;
+    transition: .3s;
+    width: 30px;
+}
+
+
+.brandlogo {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+  width: 120px;
+  height: 50px;
+  aspect-ratio: auto 120 / 50;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.offer {
+  margin-bottom: auto;
+  margin-top: auto;
+  align-items: center;
+  color: #fdfdfd;
+  display: flex;
+  flex-direction: column;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  justify-content: center;
+  line-height: normal;
+  margin-bottom: 7px;
+  max-width: 169px;
+  text-align: center;
+  text-transform: uppercase;
+
+}
+.items[data-id="item-1"] .offer {
+  animation: pulse 3s infinite alternate;
+  /* Optional: Ensure the text is centered and looks premium */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-style: italic;
+}
+
+/* Style for the "Best Offer" badge if you want it to look like the image */
+.bestoffer {
+  background-color: #20bd42;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+/* THE PULSE ANIMATION */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  100% {
+    transform: scale(1.10); /* Slightly grows */
+    filter: brightness(1.2); /* Slightly glows */
+  }
+}
+
+
+
+
+
+.rate {
+      margin-bottom: auto;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+.rating {
+  color: #fdfdfd;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+
+}
+
+
+.ratingStars {
+  margin-bottom: auto;
+  margin-top: auto;
+  
+}
+
+.ratingStars img {
+  margin: 5px;
+  width: 20px;
+  aspect-ratio: auto 20 / 20;
+  height: 20px;
+  display: inline-block; /* makes images sit next to each other */
+  margin-right: 10px;    /* optional spacing */
+  vertical-align: middle; /* align vertically if heights differ */
+}
+
+.ratingCount {
+  margin-bottom: auto;
+  margin-top: auto;
+  color: #aaa;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.payments {
+      margin-bottom: auto;
+    margin-top: auto;
+        grid-column-gap: 7px;
+    column-gap: 7px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 7px;
+    row-gap: 7px;
+    text-align: center;
+}
+
+.morepayments {
+  margin-bottom: auto;
+  margin-top: auto;
+  display: block;
+  text-align: center;
+  width: 100%;
+  color: #aaa;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+}
+
+.showmore {
+  height: 40px;
+  padding: 0;
+  width: 100%;
+  background-color: #111;
+  border: 1px solid #fdfdfd;
+  color: #fdfdfd;
+  display: block;
+  margin: 0 auto 17px;
+  max-width: 116px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: background-color .4s;
+  z-index: 1;
+}
+
+
+.hidden {
+  display: none;
+}
+
+
+
+
+
+.claimButton {
+  margin-bottom: auto;
+  margin-top: auto;
+  color: black;
+  font: 14px sofiaSans, arial, sans-serif;
+  background: white;
+  margin: 33px 0px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  align-items: center;
+  font-weight: 700;
+  justify-content: center;
+  height: max-content;
+  border: none;
+  cursor: pointer;
+}
+
+.terms {
+  border-top: 1px solid rgba(255, 255, 255, .1);
+  font-size: 8px;
+  font-weight: 400;
+  padding-top: 8px;
+}
+
+
+.sectionSummary {
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+
+ul.bulletList {
+  list-style-type: disc; /* The standard bullet */
+  padding-left: 20px;
+  color: #ffffff;       
+}
+
+ul.bulletList li {
+  margin-bottom: 10px;   /* Spacing between bullets */
+  line-height: 1.6;      /* Better text breathing room */
+}
+
+
+/* ===============================
+   Mobile Tablet & Phone Styles
+================================ */
+@media (max-width: 1023px) {
+  /* 1. Hide the desktop table header */
+  .tableHeader {
+    display: none;
+  }
+
+  .BrandsTable {
+    padding-inline: 15px;
+  }
+
+  /* 2. Transform the Row into a Card */
+  .items {
+    padding: 20px 15px;
+    align-items: center; /* Center everything for a clean mobile look */
+  }
+
+  /* Target item 1 specifically to ensure it doesn't scale too much on mobile */
+  .items[data-id="item-1"] {
+    transform: scale(1); /* Avoid scaling on touch devices to prevent blur */
+    margin-bottom: 25px;
+  }
+
+  .itemInfo {
+    flex-direction: column; /* Stack all elements vertically */
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* 3. Adjust Individual Components for Mobile */
+  
+  .number {
+    position: absolute; /* Place rank number in the corner */
+    top: 10px;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+  }
+
+  .brandlogo {
+    width: 140px; /* Make logo slightly larger on mobile cards */
+    height: auto;
+  }
+
+  .offer {
+    max-width: 100%;
+    font-size: 17px;
+  }
+
+  .rate {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px 0;
+  }
+
+  .ratingStars img {
+    width: 18px;
+    height: 18px;
+    margin: 2px;
+  }
+
+  .payments {
+    grid-template-columns: repeat(4, 1fr); /* More columns for small icons */
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .claimButton {
+    width: 100%; /* Full width button is easier to tap on mobile */
+    margin: 10px 0;
+    padding: 14px;
+    font-size: 16px;
+    background: #20bd42; /* Usually better for CTA buttons */
+    color: white;
+  }
+
+  .terms {
+    text-align: center;
+    width: 100%;
+    font-size: 10px;
+  }
+
+  /* 4. Section Summary & Lists */
+  .sectionSummary {
+    padding: 0 10px;
+    margin-top: 30px;
+  }
+
+  ul.bulletList li {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .payments {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .offer {
+    font-size: 15px;
+  }
+}
